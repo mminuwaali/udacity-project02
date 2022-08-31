@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+
+      header {
+        width: 100%;
+        height: 5em;
+        display: flex;
+        padding-inline: 7%;
+        align-items: center;
+        background-color: white;
+        justify-content: space-between;
+        box-shadow: 0 0.2em 0.5em rgba(0 0 0 / 0.2);
+      }
+
+      #logo {
+        color: coral;
+        font-size: 2.5em;
+        font-weight: 900;
+        font-family: serif;
+        font-style: italic;
+        font-variant: small-caps;
+      }
+
+      #logo::first-letter {
+        color: purple;
+        font-size: 1.2em;
+        font-family: sans-serif;
+      }
+
+      #nav {
+        gap: 2em;
+        display: flex;
+        flex: 1 1 auto;
+        padding-right: 10%;
+        justify-content: flex-end;
+      }
+
+      #nav a {
+        color: white;
+        font-size: 1.5em;
+        font-weight: 900;
+        transition: 200ms;
+        text-decoration: none;
+        font-variant: small-caps;
+        text-shadow: 0.1em 0.1em 0.1em rgba(0 0 0 / 0.4);
+      }
+
+      #nav a:hover {
+        color: purple;
+      }
+
+      #welcome {
+        inset: 0;
+        display: grid;
+        color: crimson;
+        font-weight: 900;
+        text-align: center;
+        position: absolute;
+        pointer-events: none;
+        text-transform: capitalize;
+        place-content: center center;
+        font-size: clamp(2em, 7vw, 12em);
+        text-shadow: 0.1em 0.1em rgba(0 0 0 / 0.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="logo">mimi</h1>
+      <nav id="nav">
+        <a href="/api/v0/feed">feed</a>
+        <a href="/api/v0/user">user</a>
+      </nav>
+    </header>
+
+    <h1 id="welcome">welcome to my site</h1>
+  </body>
+
+</html>

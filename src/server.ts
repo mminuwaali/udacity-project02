@@ -1,4 +1,5 @@
 require('dotenv').config();
+import { join } from 'path';
 import Sequelize from './sequelize';
 import bodyparser from 'body-parser';
 import models from './controllers/v0/model';
@@ -9,6 +10,8 @@ import express, { Response, Request, NextFunction as Next } from "express";
 const app = express();
 const port = process.env.port || 8080;
 
+app.set('view engine', 'ejs');
+app.set('views', join(__dirname, 'views'));
 app.use((req: Request, res: Response, next: Next): void => {
   res.header("Access-Control-Allow-Origin", `http://localhost:${port}`);
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -25,9 +28,7 @@ const Server = async (): Promise<void> => {
   // server endpoints
 
   app.get('/', (req: Request, res: Response, next: Next): void => {
-    console.log(req.body);
-
-    res.send('<h1>Welcome to my website.</h1> <span>try GET /filteredimage?image_url={{}}</span>');
+    res.render('pages');
   });
 
   app.listen(port, (): void => {
