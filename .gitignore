@@ -109,4 +109,4 @@ dist
 !.elasticbeanstalk/*.global.yml
 
 
-wwww/*
+www/*
