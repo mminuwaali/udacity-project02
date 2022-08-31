@@ -1,9 +1,0 @@
-@import url(./general.css);
-
-h1 {
-  color: crimson;
-  font-weight: 900;
-  font-family: sans-serif;
-  font-variant: small-caps;
-  font-size: clamp(1em, 4vw, 7em);
-}

@@ -14,6 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
 const path_1 = require("path");
+const sequelize_1 = __importDefault(require("./sequelize"));
+const model_1 = __importDefault(require("./controllers/v0/model"));
 const router_1 = __importDefault(require("./controllers/v0/router"));
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
@@ -29,8 +31,8 @@ app.use(express_1.default.json());
 app.use('/api/v0', router_1.default);
 const Server = () => __awaiter(void 0, void 0, void 0, function* () {
     // database connection
-    // Sequelize.addModels(models);
-    // await Sequelize.sync();
+    sequelize_1.default.addModels(model_1.default);
+    yield sequelize_1.default.sync();
     // server endpoints
     app.get('/', (req, res, next) => {
         res.render('pages');

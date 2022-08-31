@@ -22,8 +22,8 @@ app.use('/api/v0', Router);
 
 const Server = async (): Promise<void> => {
   // database connection
-  // Sequelize.addModels(models);
-  // await Sequelize.sync();
+  Sequelize.addModels(models);
+  await Sequelize.sync();
 
   // server endpoints
 
