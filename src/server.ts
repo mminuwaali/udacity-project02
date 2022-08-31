@@ -24,7 +24,7 @@ const Server = async (): Promise<void> => {
   // server endpoints
 
   app.get('/', (req: Request, res: Response, next: Next): void => {
-    res.render('pages');
+    res.send('welcom to my site');
   });
 
   app.listen(port, (): void => {
