@@ -8,8 +8,8 @@ deploy:
   artifact: ./www/Archive.zip
 environment-defaults:
   udacity-project-02-dev:
-    branch: main
-    repository: origin
+    branch: null
+    repository: null
 global:
   application_name: udacity-project-02
   branch: main
